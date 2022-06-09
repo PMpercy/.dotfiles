@@ -74,6 +74,8 @@ def startup_once():
     execute("picom --experimental-backends")
     execute("nm-applet")
     execute("dunst")
+    #execute("ulauncher --no-window-shadow --hiden-window")
+    execute("ulauncher --hide-window --no-window-shadow")
 #
 
 # ==== qtile parameters

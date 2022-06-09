@@ -31,9 +31,9 @@ def icon(text='?', fontsize=20, bg=bg, fg=fg):
 def Wallpaper():
     return widget.Wallpaper(
         font="UbuntuMono Nerd Font",
-        #directory='~/.config/Wallpapers/WALL/ART/',
-        directory='~/.config/qtile/wall/',
-        # Wallpaper_command = ['feh', '--bg-scale'],
+        directory='~/Imágenes/DARK/',
+        #directory='~/.config/qtile/wall/',
+        Wallpaper_command = ['feh', '--bg-scale'],
         random_selection = False,
         fmt='  ',
         mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("alacritty")},
@@ -54,14 +54,14 @@ def LayoutIcon():
 def Workspaces():
     return [
         widget.GroupBox(
-            font = 'UbuntuMono Nerd Font',
-            fontsize = 19,
+            font = 'Iosevka Nerd Font',
+            fontsize = 25,
             rounded = True,
             borderwidth=1,
             active=text,
             inactive=inactive,
-            highlight_method='block',
-            urgent_alert_method='block',
+            highlight_method='text',
+            urgent_alert_method='text',
             urgent_border=urgent,
             this_current_screen_border = focus,
             #block_highlight_text_color = text,
@@ -208,6 +208,8 @@ primary_widgets = [
 
     BatteryText(
         10,
+        fontsize = 13,
+        font = "Iosevka bold"
         ),
     separator(),
 

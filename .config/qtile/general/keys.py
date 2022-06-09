@@ -24,7 +24,7 @@ home = os.path.expanduser('~')
 
 keys = [
     Key([mod], "space", lazy.function(float_to_front)),
-    Key([mod], "m", lazy.spawn("rofi -show drun")),
+    #Key([mod], "m", lazy.spawn("ulauncher")),
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
@@ -125,7 +125,7 @@ keys = [
     # ------------ App Configs ------------
 
     # Menu
-    Key([mod], "m", lazy.spawn("rofi -show drun")),
+   # Key([mod], "m", lazy.spawn("ulauncher")),
     Key([mod, "control"], "m", lazy.spawn("qtile run-cmd rofi -show drun")),
        #([mod], "mod4", lazy.spawn("rofi -show drun")),
     Key([mod], "e", lazy.spawn("nautilus")),
@@ -159,8 +159,8 @@ keys = [
 
 
         # Brightness
-    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
 
     # Player Control
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),

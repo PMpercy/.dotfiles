@@ -14,7 +14,7 @@ def status_bar(widgets):
         border_width = [2, 2, 2, 2],
         border_color = bg,
         background = bg,
-        margin = [10, 20, 0, 20]
+        margin = [0, 20, 0, 20]
     )
 
 #### Screens

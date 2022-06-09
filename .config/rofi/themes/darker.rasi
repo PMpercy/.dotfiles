@@ -1,0 +1,7 @@
+* {
+    bg: #21212150;
+    fg: #FFFFFF;
+    selectet: #000000;
+    border: #212121;
+    select: #61616170;
+}
