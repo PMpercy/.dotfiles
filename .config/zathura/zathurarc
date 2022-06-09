@@ -1,0 +1,52 @@
+#   ███████╗ █████╗ ████████╗██╗  ██╗██╗   ██╗██████╗  █████╗ 
+#   ╚══███╔╝██╔══██╗╚══██╔══╝██║  ██║██║   ██║██╔══██╗██╔══██╗
+#     ███╔╝ ███████║   ██║   ███████║██║   ██║██████╔╝███████║
+#    ███╔╝  ██╔══██║   ██║   ██╔══██║██║   ██║██╔══██╗██╔══██║
+#   ███████╗██║  ██║   ██║   ██║  ██║╚██████╔╝██║  ██║██║  ██║
+#   ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+
+
+set font                "Iosevka 12"
+#set guioptions          shv
+set n-completion-items  4
+set statusbar-basename  false
+set adjust-open         width
+set zoom-center         true
+set selection-clipboard clipboard
+
+#######################################
+# Colors                              #
+#######################################
+
+set completion-bg           "#212121"
+set completion-fg           "#a9b1d6"
+
+set completion-group-bg     "#212121"
+set completion-group-fg     "#a9b1d6"
+
+set completion-highlight-bg "#868d80"
+set completion-highlight-fg "#a7c080"
+
+set default-bg              "#212121"
+set default-fg              "#a9b1d6"
+
+set inputbar-bg             "#212121"
+set inputbar-fg             "#a9b1d6"
+
+set notification-bg         "#212121"
+set notification-fg         "#a9b1d6"
+set notification-error-bg   "#212121"
+set notification-error-fg   "#f7768e"
+set notification-warning-bg "#1a1b26"
+set notification-warning-fg "#e0af68"
+
+set statusbar-bg            "#0F111A"
+set statusbar-fg            "#a9b1d6"
+
+set highlight-color         "#1f2335"
+set highlight-active-color  "#f7768e"
+
+set recolor                 true
+set recolor-keephue         true
+set recolor-darkcolor       "#a9b1d6"
+set recolor-lightcolor      "#212121"

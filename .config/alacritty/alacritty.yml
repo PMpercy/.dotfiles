@@ -1,0 +1,75 @@
+import:
+  #- ~/.config/alacritty/themes/material-ocean.yml
+  - ~/.config/alacritty/themes/Material-Theme/darker.yml
+
+font:
+# bold:
+#   family: Iosevka
+#   style: Bold
+# italic:
+#   family: Iosevka
+#   style: Italic
+  normal:
+    family: Iosevka Nerd Font
+    style: Bold
+# bold_italic:
+#   family: Iosevka
+#   style: Bold Italic
+  size: 12
+  offset:
+    x: 0
+    y: 1
+  glyph_offset:
+    x: 0
+    y: 0
+
+# onedarkpro.nvim - onedark
+#
+cursor:
+  dynamic_title: true
+  style:
+    blinking: Always        #Never, Off, On, Always
+    blink_interval: 50
+    shape: Beam
+
+
+mouse:
+  
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: true
+  
+
+window:
+  dimensions:
+    columns: 125
+    lines: 30
+  padding:
+    x: 30
+    y: 20
+  dynamic_padding: true
+  decorations: none
+    #startup_mode: Maximized
+  dynamic_title: true
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+  # Background opacity
+  opacity: 0.95
+env:
+  #TERM: alacritty
+  TERM: xterm-256color
+
+    #shell:
+  #program: /bin/fish
+    #args:
+    # - -l
+    # - -c
+    # - "tmux"
+custom_cursor_colors: true
+live_config_reload: true
+draw_bold_text_with_bright_colors: true
+
+key_bindings:
+  # remove the line below!
+  - { key: W, mods: Command, action: Quit }
