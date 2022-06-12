@@ -76,7 +76,8 @@ floating_layout = layout.Floating(
         Match(wm_class='Org.gnome.Nautilus'),
         #Match(wm_class='mpv'),
         Match(title='Picture-in-Picture'),
-        Match(wm_class='Zoom')
+        Match(wm_class='Zoom'),
+        Match(title='Spotify')
         
 
     ],

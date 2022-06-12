@@ -11,18 +11,7 @@ import subprocess
 import os
 from libqtile import hook
 
-
-#@hook.subscribe.startup_once
-# def autostart():
-#    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-#    subprocess.run([home])
-
-# def float_to_front(qtile: Qtile) -> None:
-#    """ Bring all floating windows of the group to front """
-#    for window in qtile.current_group.windows:
-#        if window.floating:
-#            window.cmd_bring_to_front()
-
+from os import path
 
 
 @hook.subscribe.client_new
@@ -57,7 +46,7 @@ def execute_once(process):
         return subprocess.Popen(process.split())
 
 
-def execute(process):
+def exec(process):
     """run a process."""
     return subprocess.Popen(process.split())
 
@@ -68,14 +57,15 @@ def execute(process):
 def startup_once():
     """Start the applications at Qtile startup."""
     #detect_screens(qtile)
-    execute('/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1')
-    execute("/usr/lib/gsd-xsettings")
-    #execute("xfsettingsd")
-    execute("picom --experimental-backends")
-    execute("nm-applet")
-    execute("dunst")
-    #execute("ulauncher --no-window-shadow --hiden-window")
-    execute("ulauncher --hide-window --no-window-shadow")
+    exec('/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1')
+    exec("/usr/lib/gsd-xsettings")
+    exec("picom --experimental-backends")
+    exec("nm-applet")
+    exec("dunst")
+    exec("volumeicon")
+    exec("conky")
+    exec("cbatticon -u 5 -i standard -o 'xbacklight=5'")
+    #execute("ulauncher --hide-window --no-window-shadow")
 #
 
 # ==== qtile parameters

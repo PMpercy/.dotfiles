@@ -1,8 +1,5 @@
 from libqtile import widget, qtile
 from .themes.init import *
-from .widget.battery import BatteryText
-from .widget.volume import Volume
-
 
 #bg =init.bg
 
@@ -16,7 +13,7 @@ def separator():
 
 
 ### icons ###
-def icon(text='?', fontsize=20, bg=bg, fg=fg):
+def icon(text='?', fontsize=15, bg=bg, fg=fg):
     return widget.TextBox(
         fontsize = fontsize,
         text=text,
@@ -31,7 +28,7 @@ def icon(text='?', fontsize=20, bg=bg, fg=fg):
 def Wallpaper():
     return widget.Wallpaper(
         font="UbuntuMono Nerd Font",
-        directory='~/Imágenes/DARK/',
+        directory='~/.config/WALL/',
         #directory='~/.config/qtile/wall/',
         Wallpaper_command = ['feh', '--bg-scale'],
         random_selection = False,
@@ -77,11 +74,10 @@ def Workspaces():
 def windowname(foreground=color6):
     return widget.WindowName(
             highlight_method = 'block',
-            icon_size = 18,
-            # title_width_method = 'uniform',
+            #icon_size = 18,
+            title_width_method = 'uniform',
             max_title_width = None,
             foreground=foreground
-
     )
 
 
@@ -90,7 +86,7 @@ def windowname(foreground=color6):
 def CheckUpdates(foreground=text):
     return [
         
-        icon(text='', fg=foreground),
+        icon(text=' ', fg=foreground),
         widget.CheckUpdates(
             no_update_string='0',
             display_format='updates:{updates}',
@@ -116,22 +112,10 @@ def backlight(foreground=text):
     ]
 
 
-
-#### Clock ####
-def clock(foreground=text):
-    return [
-        icon(text='', fg=foreground),
-        widget.Clock(
-            format="%Y-%m-%d %a %I:%M %p",
-            fontsize = 12,
-            foreground=foreground
-        )
-    ]
-
 ### CPU ##
 def cpu(foreground=text):
     return [
-        icon(text='', fg=foreground),
+        icon(text=' ', fg=foreground, fontsize=18),
         widget.CPU(
             format = '{load_percent}%',
             foreground = foreground
@@ -140,21 +124,12 @@ def cpu(foreground=text):
 ### memory ###
 def memory(foreground=text):
     return [
-        icon(text='', fg=foreground),
+        icon(text=' ', fg=foreground),
         widget.Memory(
             format = '{MemUsed:.0f}{mm}',
             foreground = foreground
         )
     ]
-
-#### VOLUME ###
-def volume():
-    return [
-        Volume(
-                emoji = True
-            ),
-    ]
-
 
 
 ### Systray ##
@@ -167,8 +142,8 @@ def systray():
 
 
 widget_defaults = dict(
-    font="Iosevka bold",
-    fontsize=13,
+    font="Iosevka Nerd Font bold",
+    fontsize=15,
     padding=1,
     foreground=text,
 )
@@ -189,31 +164,11 @@ primary_widgets = [
 
     *CheckUpdates(),
     separator(),
-    
+    separator(),
     *cpu(),
     separator(),
     
     *memory(),
-    separator(),
-
-    #*backlight(),
-    # separator(),
-    
-    #VolumeText(
-    #    fontsize = 15,
-    #    font = "UbuntuMono Nerd Font bold"
-    #    ),
-    Volume(),
-    separator(),
-
-    BatteryText(
-        10,
-        fontsize = 13,
-        font = "Iosevka bold"
-        ),
-    separator(),
-
-    *clock(),
     separator(),
 
     systray()

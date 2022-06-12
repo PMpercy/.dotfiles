@@ -19,6 +19,7 @@ def float_to_front(qtile: Qtile) -> None:
 
 ####### Keys ##########
 mod = "mod4"
+alt = "mod1"
 terminal = guess_terminal()
 home = os.path.expanduser('~')
 
@@ -32,24 +33,27 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
+    
+    Key([alt], "Tab", lazy.group.next_window()),
+    Key([alt, "shift"], "Tab", lazy.group.prev_window()),
 
     Key([mod], "Up", 
-        lazy.group.next_window(),
-        #lazy.layout.up(),
+        #lazy.group.next_window(),
+        lazy.layout.up(),
         desc="Move focus up"),
     Key([mod], "Down", 
-        #lazy.layout.down(),
-        lazy.group.next_window(),
+        lazy.layout.down(),
+        #lazy.group.next_window(),
         desc="Move focus down"
     ),
     Key([mod], "Left", 
-        #lazy.layout.left(),
-        lazy.group.next_window(),
+        lazy.layout.left(),
+        #lazy.group.next_window(),
         desc="Move focus to left"
     ),
     Key([mod], "Right", 
-        #lazy.layout.right(),
-        lazy.group.next_window(),
+        lazy.layout.right(),
+        #lazy.group.next_window(),
         desc="Move focus to right"
     ),
     
@@ -125,9 +129,8 @@ keys = [
     # ------------ App Configs ------------
 
     # Menu
-   # Key([mod], "m", lazy.spawn("ulauncher")),
+    Key([mod], "m", lazy.spawn("rofi -show drun")),
     Key([mod, "control"], "m", lazy.spawn("qtile run-cmd rofi -show drun")),
-       #([mod], "mod4", lazy.spawn("rofi -show drun")),
     Key([mod], "e", lazy.spawn("nautilus")),
        # Window Nav
     Key([mod, "shift"], "m", lazy.spawn("rofi -show window")),
@@ -153,14 +156,14 @@ keys = [
     # ------------ Hardware Configs ------------
 
     # Volume
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q -D pulse sset Master 5%-")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q -D pulse sset Master 5%+")),
-    Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master 1+ toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 5- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 5+ unmute")),
+    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
 
 
         # Brightness
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
 
     # Player Control
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),

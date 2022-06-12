@@ -1,6 +1,8 @@
 from libqtile.config import Group, Rule, Key, ScratchPad, DropDown, Match
 from libqtile.command import lazy
 from .keys import mod, keys
+from libqtile import layout
+from .layouts import layout_conf
 
 
 #####GRUPOS#####
@@ -23,7 +25,7 @@ groups = [
             Match(wm_class=["Alacritty"])
         ],
         layouts = [
-            #layout.Floating(),
+            layout.Floating(**layout_conf),
             #layout.MonadTall(**layout_conf)
         ]
     ), 
@@ -34,7 +36,7 @@ groups = [
             Match(wm_class=["Org.gnome.Nautilus"])],
     ),
     Group("5", label="  "),
-    Group("6", label="  ", matches=[Match(wm_class=["Spotify"])]),
+    Group("6", label="  ", layouts = [layout.Floating(**layout_conf)]),
 ]
 
 for i in groups:
