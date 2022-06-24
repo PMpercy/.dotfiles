@@ -1,4 +1,5 @@
 {
+  
     "tsserver.enable": true,
     "suggest.completionItemKindLabels": {
   	    "method":           "  ",
@@ -35,6 +36,5 @@
 
     //lua
     "Lua.telemetry.enable": true
-
 
 }

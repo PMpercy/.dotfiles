@@ -16,7 +16,7 @@ opt.cul = true
 
 -- status, tab, number, sign line
 opt.ruler = false
-opt.laststatus = 2
+opt.laststatus = 3
 opt.number = true
 opt.numberwidth = 1
 opt.relativenumber = false

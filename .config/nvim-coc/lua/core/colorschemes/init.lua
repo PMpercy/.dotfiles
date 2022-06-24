@@ -1,6 +1,6 @@
 
 --[onedark, tokyonight, dracula, material, nord, onedarkpro, catppuccin, github]
-local themes = "onedarkpro"
+local themes = "material"
 
 -- OneDarkPro
 if themes == "onedarkpro" then

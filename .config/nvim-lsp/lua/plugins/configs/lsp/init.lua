@@ -5,5 +5,5 @@ end
 
 require "plugins.configs.lsp.lsp-installer"
 require("plugins.configs.lsp.handlers").setup()
-require "plugins.configs.lsp.null-ls"
+--require "plugins.configs.lsp.null-ls"
 --require 'plugins.configs.lsp.lspsaga'

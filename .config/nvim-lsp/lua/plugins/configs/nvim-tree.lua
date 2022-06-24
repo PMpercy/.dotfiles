@@ -85,55 +85,55 @@ nvim_tree.setup {
     highlight_opened_files = "none",
     root_folder_modifier = ":~",
     indent_markers = {
-      enable = false,
-      icons = {
+        enable = false,
+        icons = {
 
-        corner = "└ ",
-        edge = "│ ",
-        none = "  ",
+            corner = "└ ",
+            edge = "│ ",
+            none = "  ",
 
-      },
+        },
     },
     icons = {
-      webdev_colors = true,
-      git_placement = "before",
-      padding = " ",
-      symlink_arrow = " ➛ ",
+        webdev_colors = true,
+        git_placement = "before",
+        padding = " ",
+        symlink_arrow = " ➛ ",
 
-      show = {
-        file = true,
-        folder = true,
-        folder_arrow = true,
-        git = true,
-      },
-      glyphs = {
-        default = "",
-        symlink = "",
-        folder = {
-          arrow_closed = "",
-          arrow_open = "﬌",
-          default = " ",
-          open = " ",
-
-          empty = " ",
-          empty_open = " ",
-          symlink = " ",
-          symlink_open = " ",
+        show = {
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
         },
-        git = {
+        glyphs = {
+            default = "",
+            symlink = "",
+            folder = {
+                arrow_closed = "",
+                arrow_open = "﬌",
+                default = " ",
+                open = " ",
 
-          unstaged = "✗",
-          staged = "✓",
-          unmerged = " ",
-          renamed = "➜",
-          untracked = "★",
-          deleted = " ",
-          ignored = "◌",
+                empty = " ",
+                empty_open = " ",
+                symlink = " ",
+                symlink_open = " ",
+            },
+            git = {
+
+                unstaged = "✗",
+                staged = "✓",
+                unmerged = " ",
+                renamed = "➜",
+                untracked = "★",
+                deleted = " ",
+                ignored = "◌",
+            },
         },
-      },
     },
     special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
-  },
+    },
 
 }
 

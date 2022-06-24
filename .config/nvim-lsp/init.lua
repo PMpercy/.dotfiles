@@ -16,7 +16,7 @@ for _, module in ipairs(core_module) do
 	end
 end
 
-vim.cmd[[
-    source  $HOME/.config/nvim/coc/coc.vim
-]]
 
+cmd [[ 
+    au BufNewFile,BufRead /*.rasi setf css
+]]
