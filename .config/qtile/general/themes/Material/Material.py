@@ -8,7 +8,7 @@ MaterialGeneral = [
     "#82AAFF",#blue       [4]
     "#C792EA",#magenta    [5]
     "#89DDFF",#cyan       [6]
-    "#ffffff",#white      [7]
+    "#EEffff",#white      [7]
 
     #"#80CBC4",#[8]
     "#4b6462",

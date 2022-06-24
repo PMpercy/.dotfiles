@@ -28,10 +28,10 @@ def icon(text='?', fontsize=15, bg=bg, fg=fg):
 def Wallpaper():
     return widget.Wallpaper(
         font="UbuntuMono Nerd Font",
-        directory='~/.config/WALL/',
+        directory='~/Imágenes/WALL/',
         #directory='~/.config/qtile/wall/',
         Wallpaper_command = ['feh', '--bg-scale'],
-        random_selection = False,
+        random_selection = True,
         fmt='  ',
         mouse_callbacks={'Button3': lambda: qtile.cmd_spawn("alacritty")},
         fontsize=18,
@@ -55,13 +55,13 @@ def Workspaces():
             fontsize = 25,
             rounded = True,
             borderwidth=1,
-            active=text,
+            active=active,
             inactive=inactive,
             highlight_method='text',
             urgent_alert_method='text',
             urgent_border=urgent,
-            this_current_screen_border = focus,
-            #block_highlight_text_color = text,
+            this_current_screen_border = color6,
+            block_highlight_text_color = text,
             this_screen_border = inactive,
             other_current_screen_border = bg,
             other_screen_border = bg,
@@ -71,7 +71,7 @@ def Workspaces():
     ]
 
 #### windowname ####
-def windowname(foreground=color6):
+def windowname(foreground=active):
     return widget.WindowName(
             highlight_method = 'block',
             #icon_size = 18,
@@ -83,7 +83,7 @@ def windowname(foreground=color6):
 
 
 #### CheckUpdates ####
-def CheckUpdates(foreground=text):
+def CheckUpdates(foreground=active):
     return [
         
         icon(text=' ', fg=foreground),
@@ -113,7 +113,7 @@ def backlight(foreground=text):
 
 
 ### CPU ##
-def cpu(foreground=text):
+def cpu(foreground=active):
     return [
         icon(text=' ', fg=foreground, fontsize=18),
         widget.CPU(
@@ -122,7 +122,7 @@ def cpu(foreground=text):
         )
     ]
 ### memory ###
-def memory(foreground=text):
+def memory(foreground=active):
     return [
         icon(text=' ', fg=foreground),
         widget.Memory(
@@ -145,12 +145,14 @@ widget_defaults = dict(
     font="Iosevka Nerd Font bold",
     fontsize=15,
     padding=1,
-    foreground=text,
+    foreground=active,
 )
 
 
 
 
+#from os import path
+import os
 
 primary_widgets = [
 
@@ -171,7 +173,13 @@ primary_widgets = [
     *memory(),
     separator(),
 
-    systray()
+    systray(),
+    separator(),
+
+    widget.TextBox(
+        text=" ",
+        mouse_callbacks={'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.config/rofi/powermenu/powermenu.sh"))}
+    )
 ]
 secondary_widgets = [
     *Workspaces(),

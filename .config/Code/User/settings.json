@@ -1,0 +1,51 @@
+{
+    "Lua.telemetry.enable": true,
+    "workbench.colorTheme": "Community Material Theme Darker",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'Iosevka Nerd Font'",
+    "window.menuBarVisibility": "toggle",
+    "explorer.confirmDelete": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultLocation": "editor",
+    "window.titleBarStyle": "custom",
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 15,
+    "editor.inlineSuggest.enabled": true,
+    "editor.fontLigatures": true,
+    
+    "editor.guides.bracketPairs": true,
+    "editor.bracketPairColorization.enabled": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.languageDetection": true,
+
+    "oneDarkPro.bold": true,
+    "oneDarkPro.vivid": true,
+
+    "workbench.sideBar.location": "left",
+    "telemetry.telemetryLevel": "off",
+
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    
+    "errorLens.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false,
+        "javascript": false,
+        "lua": false
+    },
+    "workbench.activityBar.visible": false,
+    "window.zoomLevel": 1,
+    // "errorLens.enabledDiagnosticLevels": [
+    //     "error",
+    //     "warning",
+    //     "info",
+    //     "hint"
+    // ],
+    // "python.analysis.diagnosticMode": "workspace",
+    // "python.diagnostics.sourceMapsEnabled": true,
+    // "errorLens.statusBarMessageEnabled": true,
+}

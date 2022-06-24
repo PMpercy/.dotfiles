@@ -5,6 +5,7 @@ from libqtile import qtile
 
 
 import os
+from os import path
 from libqtile.core.manager import Qtile
 
 
@@ -23,8 +24,16 @@ alt = "mod1"
 terminal = guess_terminal()
 home = os.path.expanduser('~')
 
+SCRIPT_DIR = os.path.expanduser('~/.config/')
+def script(fname):
+    """Get the path of a script in the scripts directory"""
+    return os.path.expanduser(SCRIPT_DIR + fname)
+
+
 keys = [
-    Key([mod], "space", lazy.function(float_to_front)),
+#    Key([mod], "p", lazy.cmd(x),
+
+    Key([mod], "space", lazy.spawn(script("rofi/powermenu/powermenu.sh"))),
     #Key([mod], "m", lazy.spawn("ulauncher")),
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
@@ -127,6 +136,9 @@ keys = [
     Key([mod], "comma", lazy.prev_screen()),
 
     # ------------ App Configs ------------
+    
+    #screen lock
+    Key([mod, "control"], "l", lazy.spawn("betterlockscreen -l --blur")),
 
     # Menu
     Key([mod], "m", lazy.spawn("rofi -show drun")),
@@ -138,11 +150,13 @@ keys = [
        # Browser
     Key([mod], "b", lazy.spawn("firefox")),
 
+    Key([mod], "9",   lazy.to_next_screen()),
+    Key([mod], "8",  lazy.to_prev_screen()),
        # File Explorer
 
        # Terminal
-    Key([mod], "Return", lazy.spawn("alacritty")),
-    Key([mod, "shift"], "Return", lazy.spawn("kitty")),
+    Key([mod], "Return", lazy.spawn("kitty")),
+    # Key([mod, "shift"], "Return", lazy.spawn("kitty")),
 
        # Redshift
        #([mod], "r", lazy.spawn("redshift -O 2400")),
@@ -152,9 +166,7 @@ keys = [
     Key([], "Print", lazy.spawn("flameshot gui")),
 
 
-
     # ------------ Hardware Configs ------------
-
     # Volume
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 5- unmute")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 5+ unmute")),
@@ -169,6 +181,8 @@ keys = [
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
+
+    Key([], "XF86ScreenSaver", lazy.spawn("alacritty"))
 ]
 
 

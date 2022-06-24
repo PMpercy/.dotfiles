@@ -1,0 +1,122 @@
+/*
+ *
+ * Author  : Aditya Shakya
+ * Mail    : adi1090x@gmail.com
+ * Github  : @adi1090x
+ * Twitter : @adi1090x
+ *
+ */
+
+configuration {
+	font:							"Iosevka Nerd Font 0";
+    show-icons:                     false;
+	icon-theme: 					"Papirus";
+    drun-display-format:            "{name}";
+    disable-history:                false;
+	sidebar-mode: 					false;
+}
+
+@import "styles/colors.rasi"
+
+window {
+    transparency:                   "real";
+    background-color:               @background;
+    text-color:                     @foreground;
+    border-radius:                  10px;
+    height:                         15%;
+    width:                          45%;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+    enabled: 						false;
+    padding:                        0;
+	background-color: 				@background;
+	text-color: 					@foreground;
+}
+
+textbox-prompt-colon {
+	expand: 						false;
+	str: 							"";
+	background-color: 				@background;
+	text-color: 					@foreground;
+    padding:                        0%;
+}
+/*
+inputbar {
+	children: 						[ textbox-prompt-colon, prompt ];
+    background-color:               @background;
+    text-color:                     @foreground;
+    expand:                         false;
+    border:                  		0%;
+    border-radius:                  0%;
+    border-color:                  	none;
+    margin:                         0;
+    padding:                        0;
+    position:                       center;
+}
+*/
+listview {
+    background-color:               @background;
+    margin:                         0%;
+    spacing:                        2%;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         horizontal;
+}
+
+mainbox {
+    background-color:               @background;
+    children:                       [ listview ];
+    spacing:                        0%;
+    padding:                        2% 0% 0% 3% ;
+    margin:                         1% 2% 2% 2%;
+}
+
+element {
+    background-color:               @background;
+    text-color:                     @foreground;
+    orientation:                    horizontal;
+    border-radius:                  5px;
+    margin:                         0%;
+}
+
+element-text {
+    background-color: 				transparent;
+    text-color:       				inherit;
+	font:							"Iosevka Nerd Font 32";
+    expand:                         false;
+    margin:                         2% 2% 2% 3%;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @background;
+    text-color:                     @foreground;
+    border-radius:                  5px;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @background;
+    text-color:                     @foreground;
+}
+
+element selected {
+    background-color:               @selected;
+    text-color:                     @foreground;
+    border:                  		0%;
+    border-radius:                  5px;
+}
+
+element selected.urgent {
+    background-color:               @urgent;
+    text-color:                     @foreground;
+}
+
+element selected.active {
+    background-color:               @background;
+    color:                          @foreground;
+}

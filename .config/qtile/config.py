@@ -5,14 +5,21 @@ from general.widgets import widget_defaults, extension_defaults
 from general.screens import screens
 from general.layouts import layouts, floating_layout
 from general.keys import mod, keys
+from general.path import qtile_path
+
+
 
 
 import subprocess
 import os
 from libqtile import hook
 
+
 from os import path
 
+@hook.subscribe.startup_once
+def autostart():
+    subprocess.call([path.join(qtile_path, 'autostart.sh')])
 
 @hook.subscribe.client_new
 def dialogs(window):
@@ -59,17 +66,18 @@ def startup_once():
     #detect_screens(qtile)
     exec('/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1')
     exec("/usr/lib/gsd-xsettings")
-    exec("picom --experimental-backends")
+    exec("picom")
+    #xec("picom --experimental-backends")
     exec("nm-applet")
     exec("dunst")
     exec("volumeicon")
     exec("conky")
-    exec("cbatticon -u 5 -i standard -o 'xbacklight=5'")
+    exec("cbatticon -u 5 -i standard ")
     #execute("ulauncher --hide-window --no-window-shadow")
 #
 
 # ==== qtile parameters
-wmname = "LG3D"  # java hack
+wmname = "Qtile"  # java hack
 mod = "mod4"
 
 dgroups_key_binder = None
@@ -107,10 +115,3 @@ def floating_dialogs(window):
         window.floating = True
 
 #
-
-
-
-
-
-
-
